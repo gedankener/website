@@ -121,7 +121,7 @@ const ToggleSwitch = ({ isOn, handleToggle }) => {
         <input type="checkbox" checked={isOn} onChange={handleToggle} />
         <span className="slider round"></span>
       </label>
-      <span className="toggle-label">{isOn ? "Choas Off" : "Chaos On"}</span>
+      <span className="toggle-label">{isOn ? "Stop the Chaos" : "Back to Chaos"}</span>
     </div>
   );
 };
