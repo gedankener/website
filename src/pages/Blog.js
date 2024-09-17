@@ -16,7 +16,7 @@ const Blog = ({ isChaos }) => {
     </>
   );
 
-  return <PageTemplate title="Blog" content={content} isChaos={isChaos} />;
+  return <PageTemplate title="Blog" content={content} isChaos={false} />;
 };
 
 export default Blog;

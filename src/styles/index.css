@@ -80,19 +80,20 @@ input:checked + .slider:before {
 
 .sidebar {
   position: fixed;
-  left: -200px;
   top: 0;
+  left: 0;
   width: 200px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
   z-index: 10;
   overflow-y: auto;
-  transition: left 0.3s ease;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
 }
 
 .sidebar.visible {
-  left: 0;
+  transform: translateX(0);
 }
 
 .sidebar ul {
@@ -126,11 +127,18 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.visible + .page-container {
+  margin-left: 200px;
 }
 
 .page-content {
   max-width: 800px;
   padding: 20px;
+  margin-left: 300px;
+  transition: margin-left 0.3s ease;
 }
 
 .bubble {
@@ -168,5 +176,13 @@ input:checked + .slider:before {
     width: 80px;
     height: 80px;
     font-size: 12px;
+  }
+  
+  .sidebar {
+    width: 100%;
+  }
+  
+  .sidebar.visible + .page-container {
+    margin-left: 0;
   }
 }

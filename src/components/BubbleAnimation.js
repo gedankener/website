@@ -1,9 +1,19 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const BubbleAnimation = ({ isAnimating }) => {
   const [bubbles, setBubbles] = useState([]);
-
-  const pages = ['Projects', 'Quotes', 'Books', 'Music', 'Picture', 'Blog', 'CV', 'Leave Me a Note'];
+  const navigate = useNavigate();
+  const pages = [
+    { name: 'Projects', path: '/projects' },
+    { name: 'Quotes', path: '/quotes' },
+    { name: 'Books', path: '/books' },
+    { name: 'Music', path: '/music' },
+    { name: 'Pictures', path: '/pictures' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'CV', path: '/cv' },
+    { name: 'Leave Me a Note', path: '/leave-me-a-note' }
+  ];
   const bubbleColors = pages.map(() => `hsl(${Math.random() * 360}, 70%, 60%)`);
 
   const checkCollision = (b1, b2) => {
@@ -62,7 +72,8 @@ const BubbleAnimation = ({ isAnimating }) => {
 
   useEffect(() => {
     setBubbles(pages.map((page, index) => ({
-      page,
+      page: page.name,
+      path: page.path,
       position: { 
         x: Math.random() * (window.innerWidth - 100), 
         y: Math.random() * (window.innerHeight - 100) 
@@ -88,6 +99,10 @@ const BubbleAnimation = ({ isAnimating }) => {
     return () => cancelAnimationFrame(animationFrame);
   }, [isAnimating, moveBubbles]);
 
+  const handleBubbleClick = (path) => {
+    navigate(path);
+  };
+
   return (
     <>
       {bubbles.map((bubble, index) => (
@@ -98,7 +113,9 @@ const BubbleAnimation = ({ isAnimating }) => {
             left: `${bubble.position.x}px`,
             top: `${bubble.position.y}px`,
             backgroundColor: bubble.color,
+            cursor: 'pointer',
           }}
+          onClick={() => handleBubbleClick(bubble.path)}
         >
           {bubble.page}
         </div>

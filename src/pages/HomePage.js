@@ -1,15 +1,15 @@
 import React from 'react';
 import BubbleAnimation from '../components/BubbleAnimation';
 
-const HomePage = ({ isChaos }) => {
+const HomePage = ({ isChaos, setIsChaos }) => {
   return (
-    <div className="home-page">
+    <div className="home-page" >
       {isChaos ? (
-        <BubbleAnimation isAnimating={true} />
+        <BubbleAnimation isAnimating={isChaos} setIsChaos={setIsChaos} />
       ) : (
-        <div className="home-content">
-          <h1>Welcome to Gedankener</h1>
-          <p>Explore my thoughts, projects, and interests through this interactive website.</p>
+        <div className="welcome-message" style={{ marginLeft : 300}}>
+          <h1>Welcome to My Website</h1>
+          <p>Please use the sidebar to navigate.</p>
         </div>
       )}
     </div>
