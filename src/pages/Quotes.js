@@ -5,8 +5,8 @@ const Quotes = ({ isChaos }) => {
   const content = (
     <>
       <h2>Favorite Quotes</h2>
-      <blockquote>"Quote 1" - Author</blockquote>
-      <blockquote>"Quote 2" - Author</blockquote>
+      <blockquote>"He never created a finished product. Finished products are for decadent minds. His was an evolving mechanism.." - Asimov</blockquote>
+      <blockquote>"You have to go over the line to see the line" - Simpkins</blockquote>
       <blockquote>"Quote 3" - Author</blockquote>
     </>
   );
