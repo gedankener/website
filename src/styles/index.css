@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -48,7 +49,7 @@ body, html {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 34px;
 }
 
@@ -60,12 +61,12 @@ body, html {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:checked + .slider:before {
@@ -75,7 +76,7 @@ input:checked + .slider:before {
 .toggle-label {
   font-size: 16px;
   color: white;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .sidebar {
@@ -112,7 +113,7 @@ input:checked + .slider:before {
 }
 
 .sidebar a:hover {
-  color: #2196F3;
+  color: #2196f3;
 }
 
 .sidebar hr {
@@ -135,8 +136,9 @@ input:checked + .slider:before {
 }
 
 .page-content {
-  max-width: 800px;
+  max-width: auto;
   padding: 20px;
+  margin-right: 80px;
   margin-left: 300px;
   transition: margin-left 0.3s ease;
 }
@@ -171,17 +173,52 @@ input:checked + .slider:before {
   transform: scale(1.1);
 }
 
+.content-div {
+  height: 100vh;
+  overflow-y: auto;
+}
+.cardgrid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card {
+  border-radius: 25px;
+  /*width: 100%; */
+  background-color: white;
+  color: black;
+  padding: 20px;
+  margin: 10 auto;
+  box-shadow: 2px 2px 1px 3px grey;
+}
+
+.card img {
+  border-radius: 20px;
+  background-color: #aaa;
+  width: auto;
+  padding: 20px;
+  height: 200px;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 1000px) {
+  .cardgrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 600px) {
   .bubble {
     width: 80px;
     height: 80px;
     font-size: 12px;
   }
-  
+
   .sidebar {
     width: 100%;
   }
-  
+
   .sidebar.visible + .page-container {
     margin-left: 0;
   }
