@@ -20,7 +20,7 @@ import Music from "./pages/Music";
 import Pictures from "./pages/Pictures";
 import Blog from "./pages/Blogs/Blog";
 import ShowsTV from "./pages/ShowsTV";
-import LeaveNote from "./pages/LeaveNote";
+import LeaveNote from "./pages/LeaveNotes/LeaveNote";
 
 const App = () => {
   return (

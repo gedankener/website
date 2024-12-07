@@ -208,6 +208,33 @@ input:checked + .slider:before {
   }
 }
 
+.primary_btn {
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
 @media (max-width: 600px) {
   .bubble {
     width: 80px;
@@ -222,4 +249,21 @@ input:checked + .slider:before {
   .sidebar.visible + .page-container {
     margin-left: 0;
   }
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  width: 350px;
+  height: 350px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
 }
