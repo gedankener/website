@@ -58,28 +58,52 @@ const ShowsTV = ({ isChaos }) => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <img
+            src="https://swiperjs.com/demos/images/nature-1.jpg"
+            alt="nature-1"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <img
+            src="https://swiperjs.com/demos/images/nature-2.jpg"
+            alt="nature-2"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <img
+            src="https://swiperjs.com/demos/images/nature-3.jpg"
+            alt="nature-3"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <img
+            src="https://swiperjs.com/demos/images/nature-4.jpg"
+            alt="nature-4"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <img
+            src="https://swiperjs.com/demos/images/nature-5.jpg"
+            alt="nature-5"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+          <img
+            src="https://swiperjs.com/demos/images/nature-6.jpg"
+            alt="nature-6"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+          <img
+            src="https://swiperjs.com/demos/images/nature-7.jpg"
+            alt="nature-7"
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+          <img
+            src="https://swiperjs.com/demos/images/nature-8.jpg"
+            alt="nature-8"
+          />
         </SwiperSlide>
       </Swiper>
     </>

@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import PageTemplate from "../../components/PageTemplate";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"; // Import the icon
-import "./noteModal.css";
+import "./leaveNote.css";
 import MessagesInbox from "./MessagesInbox";
 import { openDB } from "idb"; // Import idb library
 
@@ -13,13 +13,6 @@ const LeaveNote = ({ isChaos }) => {
 
   const toggleModal = () => {
     setModal(!modal);
-  };
-
-  const formAction = (event) => {
-    event.preventDefault();
-    const formData = new FormData(formRef.current);
-    const data = Object.fromEntries(formData.entries());
-    console.log("Form Data:", data);
   };
 
   const handleSubmit = async (event) => {
@@ -65,6 +58,12 @@ const LeaveNote = ({ isChaos }) => {
                   id="email"
                   name="email"
                   placeholder="Email"
+                />
+                <input
+                  type="text"
+                  id="occupation"
+                  name="occupation"
+                  placeholder="Occupation"
                 />
                 <textarea name="message" placeholder="Your message" />
               </div>
