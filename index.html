@@ -1,1 +1,208 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/logo.png"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Gedankener - A personal website"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>Gedankener</title><script defer="defer" src="/static/js/main.c44e1334.js"></script><link href="/static/css/main.0d4aa8a3.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Taha - Software Engineer</title>
+    <link rel="icon" href="public/logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .profile-container {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .profile-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            border: 3px solid #ddd;
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: normal;
+            color: #4a90e2;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            color: #4a90e2;
+            margin-bottom: 2rem;
+            font-weight: normal;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            color: black;
+            line-height: 1.6;
+            text-align: justify;
+            cursor: text;
+            margin-top: 1rem;
+        }
+
+        .bio:focus {
+            outline: none;
+        }
+
+        .notes-section {
+            margin-top: 4rem;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .notes-title {
+            font-size: 2rem;
+            color: #4a90e2;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .notes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .note-item {
+            margin-bottom: 1rem;
+        }
+
+        .note-link {
+            display: block;
+            color: #4a90e2;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .note-link:hover {
+            background-color: #f0f7ff;
+            border-color: #4a90e2;
+            transform: translateX(5px);
+        }
+
+        .note-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-photo {
+                width: 200px;
+                height: 200px;
+            }
+
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .title {
+                font-size: 1.3rem;
+            }
+
+            .bio {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <img src="public/1737208071061.jpeg" alt="Ali Taha" class="profile-photo">
+        <h1 class="name">Ali Taha</h1>
+        <h2 class="title">Gedankener</h2>
+        
+        <div class="bio" contenteditable="true" id="bio">
+            Welcome! I'm an engineer who loves building things that work. My curiosity has taken me on a journey through every layer of technology, from the precision of clean room nanofabrication all the way to product design and customer-facing sales. These days, I'm diving into software engineering, applying everything I've learned along the way.
+        </div>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="notes-section">
+        <h2 class="notes-title">Thoughts</h2>
+        
+        <ul class="notes-list">
+            <li class="note-item">
+                <a href="notes/a-life-annealed.html" class="note-link">
+                    A Life Annealed
+                    <div class="note-date">On living life through cycles of heating and cooling, exploring and settling, to achieve optimal growth</div>
+                </a>
+            </li>
+            <li class="note-item">
+                <a href="notes/against-humanoid-robots.html" class="note-link">
+                    Against Humanoid Robots
+                    <div class="note-date">My thoughts on the future of robotics and why application-specific robots will dominate</div>
+                </a>
+            </li>
+            <!-- Add more thoughts here as you create them -->
+        </ul>
+    </div>
+
+    <script>
+        // Handle bio editing
+        const bioElement = document.getElementById('bio');
+        
+        // Set placeholder text behavior
+        if (bioElement.textContent.trim() === 'Click here to write your bio...') {
+            bioElement.style.color = '#999';
+        }
+
+        bioElement.addEventListener('focus', function() {
+            if (this.textContent.trim() === 'Click here to write your bio...') {
+                this.textContent = '';
+                this.style.color = '#4a90e2';
+            }
+        });
+
+        bioElement.addEventListener('blur', function() {
+            if (this.textContent.trim() === '') {
+                this.textContent = 'Click here to write your bio...';
+                this.style.color = '#999';
+            }
+        });
+
+        bioElement.addEventListener('input', function() {
+            this.style.color = '#4a90e2';
+        });
+
+        // Auto-save to localStorage
+        bioElement.addEventListener('input', function() {
+            localStorage.setItem('aliTahaBio', this.textContent);
+        });
+
+        // Load saved bio on page load
+        window.addEventListener('load', function() {
+            const savedBio = localStorage.getItem('aliTahaBio');
+            if (savedBio && savedBio.trim() !== '' && savedBio !== 'Click here to write your bio...') {
+                bioElement.textContent = savedBio;
+                bioElement.style.color = '#4a90e2';
+            }
+        });
+    </script>
+</body>
+</html>
